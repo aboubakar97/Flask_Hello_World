@@ -29,7 +29,7 @@ def somme(valeur1, valeur2):
     return f"<h2>La somme de vos valeurs est : {somme_valeurs}</h2><p>La somme est {parite}.</p>"
 
 @app.route('/somme/', methods=['POST'])
-def somme():
+def somme2():
     data = request.get_json()
     somme_valeurs = 0
     for valeur in data['valeurs']:
