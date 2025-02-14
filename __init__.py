@@ -28,10 +28,12 @@ def somme(valeur1, valeur2):
     parite = "paire" if somme_valeurs % 2 == 0 else "impaire"
     return f"<h2>La somme de vos valeurs est : {somme_valeurs}</h2><p>La somme est {parite}.</p>"
 
-@app.route("/somme_valeur", methods=['POST'])
-def valeur=[int(i) for i in input("Entrer x nombres séparé d'un espace\n").split()]
-    resultat=sum(valeur)
-    return f"<h2>La somme de vos valeurs est : </h2>" + str(resultat)
+@app.route("/somme_valeur/<path:valeur>")
+def somme_valeur(valeur)
+    valeur=[int(i) for i in input("Entrer x nombres séparé d'un espace\n").split()]
+    resultat=int(sum(valeur))
+    max=(int(max(valeur))
+    return f"<h2>La somme de vos valeurs est : </h2>" + str(resultat) + "\n" + "<h2>La valeur la plus grande saisie est : </h2>" + str(max)
 
 
 @app.route('/cnam/')
