@@ -30,7 +30,7 @@ def somme(valeur1, valeur2):
 
 @app.route("/somme_valeur", methods=['POST'])
 def valeur=[int(i) for i in input("Entrer x nombres séparé d'un espace\n").split()]
-    resultat=sum(def valeur)
+    resultat=sum(valeur)
     return f"<h2>La somme de vos valeurs est : </h2>" + str(resultat)
 
 
