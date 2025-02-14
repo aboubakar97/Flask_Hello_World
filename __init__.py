@@ -28,6 +28,16 @@ def somme(valeur1, valeur2):
     parite = "paire" if somme_valeurs % 2 == 0 else "impaire"
     return f"<h2>La somme de vos valeurs est : {somme_valeurs}</h2><p>La somme est {parite}.</p>"
 
+@app.route('/somme', methods=['POST'])
+def somme():
+    data = request.get_json()
+    somme_valeurs = 0
+    for valeur in data['valeurs']:
+        try:
+            somme_valeurs += float(valeur)  
+        
+    return jsonify({"somme": somme_valeurs})
+
 @app.route('/cnam/')
 def cnam():
     return render_template('mise_en_ligne.html')
