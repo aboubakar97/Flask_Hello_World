@@ -12,10 +12,6 @@ def hello_world():
 @app.route('/exercices/')
 def exercices():
     return render_template('exercices.html')
-
-@app.route("/contact/")
-def MaPremiereAPI():
-    return "<h2>Ma page de contact</h2>"
   
 @app.route("/contact/")
 def MaPremiereAPI():
