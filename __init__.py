@@ -22,13 +22,12 @@ def MaPremiereAPI():
 def carre(val_user):
     return "<h2>Le carré de votre valeur est : </h2>" + str(val_user * val_user)
 
-
 @app.route('/somme/<int:valeur1>/<int:valeur2>')
-def somme(valeur1,valeur2):
-    return "<h2>La somme de vos valeurs est : </h2>" + str(valeur1 + valeur2)
-     parite = "paire" if somme % 2 == 0 else "impaire"
-    return f"<h2>La somme de vos valeurs est : {somme}</h2><p>La somme est {parite}.</p>
-  
+def somme(valeur1, valeur2):
+    somme_valeurs = valeur1 + valeur2
+    parite = "paire" if somme_valeurs % 2 == 0 else "impaire"
+    return f"<h2>La somme de vos valeurs est : {somme_valeurs}</h2><p>La somme est {parite}.</p>"
+
 @app.route('/cnam/')
 def cnam():
     return render_template('mise_en_ligne.html')
