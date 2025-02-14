@@ -29,7 +29,7 @@ def somme(valeur1, valeur2):
     return f"<h2>La somme de vos valeurs est : {somme_valeurs}</h2><p>La somme est {parite}.</p>"
 
 @app.route("/somme_valeur/<path:valeur>")
-def somme_valeur(valeur)
+def somme_valeur(valeur):
     valeur=[int(i) for i in input("Entrer x nombres séparé d'un espace\n").split()]
     resultat=int(sum(valeur))
     max=(int(max(valeur))
