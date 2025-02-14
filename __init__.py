@@ -17,7 +17,7 @@ def exercices():
 def MaPremiereAPI():
     return render_template("contact.html")
 
-@app.route('/calcul_carre', methods=['GET'])
+@app.route('/calcul_carre/', methods=['GET'])
 def calculer_carre():
     # Récupérer le nombre passé en paramètre dans l'URL
     try:
