@@ -16,10 +16,6 @@ def exercices():
 @app.route("/contact/")
 def MaPremiereAPI():
     return render_template("contact.html")
-
-@app.route('/calcul_carre/<int:val_user>')
-def carre(val_user):
-    return "<h2>Le carré de votre valeur est : </h2>" + str(val_user * val_user)
   
 @app.route('/cnam/')
 def cnam():
