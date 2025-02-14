@@ -17,9 +17,19 @@ def exercices():
 def MaPremiereAPI():
     return render_template("contact.html")
 
-@app.route("/calcul_carre/",<int:val_user>)
-def carre(val_user):
-    return "<h2>Le carré de votre valeur est : </h2>" + str(val_user * val_user)
+@app.route('/calcul_carre', methods=['GET'])
+def calculer_carre():
+    # Récupérer le nombre passé en paramètre dans l'URL
+    try:
+        # Vérifier si la valeur "valeur" existe dans les paramètres de la requête
+        valeur = float(request.args.get('valeur'))
+        carre = valeur ** 2
+        return jsonify({"valeur": valeur, "carre": carre}), 200
+    except TypeError:
+        return jsonify({"error": "Le paramètre 'valeur' est manquant ou invalide."}), 400
+    except ValueError:
+        return jsonify({"error": "La valeur doit être un nombre."}), 400
+
 
 
   
