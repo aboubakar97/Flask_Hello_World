@@ -41,3 +41,7 @@ def cnam():
                                                                                                                
 if __name__ == "__main__":
   app.run(debug=True)
+
+@app.route('/exercice_base1/')
+def exercice_base1():
+    return render_template('exercice_base1.html')
