@@ -145,42 +145,102 @@
 
     </form>
 		<h1>Exercice 4</h1>
-		 <style>
-        table {
-            width: 100%; /* Le tableau occupe toute la largeur */
-            border-collapse: collapse; /* Fusionne les bordures des cellules */
-        }
-        th, td {
-            border: 1px solid black; /* Ajoute une bordure autour des cellules */
-            width: 25%; /* Chaque cellule occupe 25% de la largeur du tableau */
-            height: 100px; /* Définit une hauteur fixe pour toutes les cellules */
-            text-align: center; /* Centrer le texte dans les cellules */
-        }
-    </style>
-</head>
-<body>
+<h1>Mon CV</h1>
 
-<table>
-    <tr>
-        <td>Cellule 1</td>
-        <td>Cellule 2</td>
-        <td>Cellule 3</td>
-        <td>Cellule 4</td>
-    </tr>
-    <tr>
-        <td>Cellule 5</td>
-        <td>Cellule 6</td>
-        <td>Cellule 7</td>
-        <td>Cellule 8</td>
-    </tr>
-    <tr>
-        <td>Cellule 9</td>
-        <td>Cellule 10</td>
-        <td>Cellule 11</td>
-        <td>Cellule 12</td>
-    </tr>
-</table>
+    <!-- Tableau des informations "standards" -->
+    <table>
+        <tr>
+            <td colspan="2" style="text-align:center; font-weight: bold; font-size: 24px;">Informations Personnelles</td>
+        </tr>
+        <tr>
+            <td><strong>Nom :</strong> John Doe</td>
+            <td><strong>Adresse :</strong> 123 rue Exemple, 75000 Paris</td>
+        </tr>
+        <tr>
+            <td><strong>Téléphone :</strong> 01 23 45 67 89</td>
+            <td><strong>Email :</strong> john.doe@example.com</td>
+        </tr>
+        <tr>
+            <td><strong>Site Web :</strong> www.johndoe.com</td>
+            <td><img src="photo.jpg" alt="Ma Photo" class="photo"></td>
+        </tr>
+    </table>
 
+    <!-- Rubrique Formation -->
+    <div class="section">
+        <h2>Formation</h2>
+        <table>
+            <tr>
+                <td><ul>
+                    <li>2018 - 2021</li>
+                    <li>2016 - 2018</li>
+                </ul></td>
+                <td>
+                    <ul>
+                        <li>Bachelor en Informatique à l'Université de Paris</li>
+                        <li>Licence en Mathématiques à l'Université de Lyon</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Rubrique Expérience professionnelle -->
+    <div class="section">
+        <h2>Expérience professionnelle</h2>
+        <table>
+            <tr>
+                <td><ul>
+                    <li>2022 - Présent</li>
+                    <li>2020 - 2022</li>
+                </ul></td>
+                <td>
+                    <ul>
+                        <li>Développeur Web chez XYZ Corp.</li>
+                        <li>Stagiaire en développement chez ABC Tech</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Rubrique Compétences -->
+    <div class="section">
+        <h2>Compétences</h2>
+        <table>
+            <tr>
+                <td><ul>
+                    <li>2021 - 2023</li>
+                    <li>2019 - 2021</li>
+                </ul></td>
+                <td>
+                    <ul>
+                        <li>Maîtrise de Python, JavaScript et HTML/CSS</li>
+                        <li>Compétences en gestion de projet Agile et Scrum</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Rubrique Informations complémentaires -->
+    <div class="section">
+        <h2>Informations complémentaires</h2>
+        <table>
+            <tr>
+                <td><ul>
+                    <li>2020</li>
+                    <li>2019</li>
+                </ul></td>
+                <td>
+                    <ul>
+                        <li>Volontaire pour une ONG - Développement d'applications éducatives</li>
+                        <li>Participation à des hackathons et conférences technologiques</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
 		 
 		
   </body>
