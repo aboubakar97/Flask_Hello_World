@@ -49,3 +49,7 @@ def exercice_base1():
 @app.route('/exercice_base2/')
 def exo():
     return render_template('exo.html')
+  
+@app.route('/exercice_base3/')
+def exo2():
+    return render_template('exo2.html')
