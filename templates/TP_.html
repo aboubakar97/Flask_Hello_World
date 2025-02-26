@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>TP1_HTML</title>
 	</head>
 	
@@ -88,11 +89,62 @@
         </tr>
     </table>
 		
-	
-	
-	
-	
 	</p>
+	
+		
+   
+    
+    <form action="#" method="post">
+        <p>
+            Votre pseudo : 
+            <input type="text" name="pseudo">
+        </p>
+
+        <p>
+            Votre mot de passe : 
+            <input type="password" name="password">
+        </p>
+
+        <p>
+            Ressaisir votre mot de passe : 
+            <input type="password" name="confirm_password">
+        </p>
+
+        <p>OS préféré :</p>
+        <p>
+            <input type="radio" name="os" value="Windows XP"> Windows XP <br>
+            <input type="radio" name="os" value="Windows Vista"> Windows Vista <br>
+            <input type="radio" name="os" value="MacOS X"> MacOS X <br>
+            <input type="radio" name="os" value="Linux"> Linux <br>
+            <input type="radio" name="os" value="Autre"> Autre
+        </p>
+
+        <p>Vous possédez :</p>
+        <p>
+            <input type="checkbox" name="ordinateur_bureau"> Un ordinateur de bureau <br>
+            <input type="checkbox" name="portable"> Un portable <br>
+            <input type="checkbox" name="netbook"> Un netbook <br>
+            <input type="checkbox" name="tablette"> Une tablette (Pad)
+        </p>
+
+        <p>Votre profession :</p>
+        <p>
+            <select name="profession" size="5">
+                <option>Chômeur</option>
+                <option>Etudiant</option>
+                <option>Fonctionnaire</option>
+                <option>Privé</option>
+                <option>Retraité</option>
+            </select>
+        </p>
+
+        <p>
+            <input type="submit" value="S'inscriree !">
+        </p>
+
+    </form>
+
+		 
 		
   </body>
 </html>
