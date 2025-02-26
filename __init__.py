@@ -46,6 +46,6 @@ if __name__ == "__main__":
 def exercice_base1():
     return render_template('exercice_base1.html')
   
-  @app.route('/exercice_base2/')
-  def exo():
+@app.route('/exercice_base2/')
+def exo():
     return render_template('exo.html')
