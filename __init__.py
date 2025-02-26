@@ -47,5 +47,5 @@ def exercice_base1():
     return render_template('exercice_base1.html')
   
   @app.route('/exercice_base2/')
-def exo():
+  def exo():
     return render_template('exo.html')
