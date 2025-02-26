@@ -61,3 +61,7 @@ def formulaire():
 @app.route('/formulaire/')
 def form():
     return render_template('form_pokemon.html')
+
+@app.route('/TP1/')
+def TP1_():
+    return render_template('TP1_.html')
