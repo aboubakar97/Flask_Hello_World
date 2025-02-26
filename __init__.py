@@ -53,3 +53,8 @@ def exo():
 @app.route('/exercice_base3/')
 def exo2():
     return render_template('exo2.html')
+  
+@app.route('/form/')
+def formulaire():
+    return render_template('formulaire.html')
+  
