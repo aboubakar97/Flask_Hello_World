@@ -57,4 +57,7 @@ def exo2():
 @app.route('/form/')
 def formulaire():
     return render_template('formulaire.html')
-  
+
+@app.route('/formulaire/')
+def form():
+    return render_template('form_pokemon.html')
