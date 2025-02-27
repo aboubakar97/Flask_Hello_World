@@ -70,6 +70,10 @@ def TP_():
 def forme_base():
     return render_template('Exemple_Base_SVG.html')
 
+@app.route('/maison/')
+def maison():
+    return render_template('maison.html')
+
 
 
 
