@@ -82,6 +82,10 @@ def Cmaison():
 def vallet():
     return render_template('vallet_trefle.html')
 
+@app.route('/chenille/')
+def chenille():
+    return render_template('chenille.html')
+
 
 
 
