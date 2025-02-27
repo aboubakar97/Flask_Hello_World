@@ -86,6 +86,10 @@ def vallet():
 def chenille():
     return render_template('chenille.html')
 
+@app.route('/carre/')
+def carrecss():
+    return render_template('carre.html')
+
 
 
 
