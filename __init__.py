@@ -65,3 +65,13 @@ def form():
 @app.route('/TP1/')
 def TP_():
     return render_template('TP_.html')
+
+@app.route('/forme_base/')
+def forme_base():
+    return render_template('Exemple_Base_SVG.html')
+
+
+
+
+
+
