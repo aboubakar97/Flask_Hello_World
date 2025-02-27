@@ -74,6 +74,10 @@ def forme_base():
 def maison():
     return render_template('maison.html')
 
+@app.route('/Cmaison/')
+def Cmaison():
+    return render_template('Correction_Maison.html')
+
 
 
 
