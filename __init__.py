@@ -78,6 +78,10 @@ def maison():
 def Cmaison():
     return render_template('Correction_Maison.html')
 
+@app.route('/vallet/')
+def vallet():
+    return render_template('vallet_trefle.html')
+
 
 
 
