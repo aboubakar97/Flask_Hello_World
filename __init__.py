@@ -94,6 +94,10 @@ def carrecss():
 def carre_etoiles():
     return render_template('Carre_Etoiles.html')
 
+@app.route('/images/')
+def images():
+    return render_template('images.html')
+
 
 
 
