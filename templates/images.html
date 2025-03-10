@@ -8,7 +8,7 @@ function fct(){
 var Result="";
 	for(i=1;i<4;i++){
 	if(document.getElementById('choix'+i).checked){
-Result = Result+'<img width="150px" src="Image'+i+'.jpg"/><br/>';
+Result = Result+'<img width="150px" src="/static/image'+i+'.jpg"/><br/>';
 		}
 	}
 document.getElementById('zone1').innerHTML = Result;	
@@ -18,9 +18,9 @@ document.getElementById('zone1').innerHTML = Result;
 </head>
 <body>
 <h3>Image(s) à afficher ?</h3><p>
-<input type="checkbox" id="choix1"/><img id="choix1" src="{{ url_for('static', filename='gojo.jpg') }}" alt="gojo">Gojo<br/>
-<input type="checkbox" id="choix2"/><img src="{{ url_for('static', filename='ulqio.jpg') }}" alt="ulqio">Ulquiora<br/>
-<input type="checkbox" id="choix3"/><img src="{{ url_for('static', filename='isoka.png') }}" alt="isoka">Hisoka<br/></p>
+<input type="checkbox" id="choix1"/><br/>
+<input type="checkbox" id="choix2"/><br/>
+<input type="checkbox" id="choix3"/><br/></p>
 <button onclick="fct()">Afficher</button>
 <div id="zone1"></div>
 
