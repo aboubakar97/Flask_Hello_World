@@ -1,41 +1,48 @@
 <html>
+
 <head>
+	<script>
+		f
 
+		function afficher_image() {
+			if (document.getElementById('choix1').checked) {
+                document.getElementById('image1').style.display = "block";
+			}
+			else { document.getElementById('image1').style.display = "none"; }
 
-<style>img{padding-top:1%;}</style>
-<script>
+            if (document.getElementById('choix2').checked) {
+                document.getElementById('image2').style.display = "block";
+			}
+			else { document.getElementById('image2').style.display = "none"; }
+            if (document.getElementById('choix3').checked) {
+                document.getElementById('image3').style.display = "block";
+            }
+			else { document.getElementById('image3').style.display = "none"; }
+		}
 
-	function img(){
-	if(document.getElementById('choix1').checked){
-		document.getElementById('image1').innerHTML = "<img src='../static/gojo.jpg' alt='Image 1' width='150'>";
-	} else {
-		document.getElementById('image1').innerHTML = "";
-	}
-
-	if(document.getElementById('choix2').checked){
-		document.getElementById('image2').innerHTML = "<img src='../static/ulqio.jpg' alt='Image 2' width='150'>";
-	} else {
-		document.getElementById('image2').innerHTML = "";
-	}
-
-	if(document.getElementById('choix3').checked){
-		document.getElementById('image3').innerHTML = "<img src='../static/hisoka.png' alt='Image 3' width='150'>";
-	} else {
-		document.getElementById('image3').innerHTML = "";
-
-</script>
+	</script>
 </head>
+
 <body>
-<h3>Image(s) à afficher ?</h3><p>
-<input type="checkbox" id="choix1"/> <br/>
-	<div id="image1"> </div>
-<input type="checkbox" id="choix2"/><br/>
-	<div id="image2"> </div>
-<input type="checkbox" id="choix3"/><br/>
-<div id="image3"> </div></p>
-<button onclick="img()">Afficher</button>
-<div id="zone1"></div>
+	>
+
+	<h2>Afficher image.s</h2>
+	<button onclick="afficher_image()">Afficher</button>
+	<div>
+		<div>
+			<input type="checkbox" id="choix1">Image 1
+			<input type="checkbox" id="choix2">Image 2
+			<input type="checkbox" id="choix3">Image 3
+		</div>
+		<div>
+			<img id="image1" src="{{ url_for('static', filename='gojo.jpg')}}" style="display:none;width: 100px;" alt="">
+			<img id="image2" src="{{ url_for('static', filename='isoka.jpg')}}" style="display:none; width: 100px;" alt="">
+			<img id="image3" src="{{ url_for('static', filename='ulqio.jpg')}}" style="display:none;width: 100px;" alt="">
+		</div>
+	</div>
+
 
 
 </body>
+
 </html>
