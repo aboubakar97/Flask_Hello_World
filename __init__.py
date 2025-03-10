@@ -76,7 +76,7 @@ def carre():
     return render_template('CSS_Carre.html')
 
 @app.route('/etoiles/')
-def etoiles():
+def etoiles1():
     return render_template('carre_etoiles.html')
                                                                                                                
 if __name__ == "__main__":
