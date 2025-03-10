@@ -18,9 +18,9 @@ document.getElementById('zone1').innerHTML = Result;
 </head>
 <body>
 <h3>Image(s) à afficher ?</h3><p>
-<input type="checkbox" id="choix1"/>Image 1<br/>
-<input type="checkbox" id="choix2"/>Image 2<br/>
-<input type="checkbox" id="choix3"/>Image 3<br/></p>
+<input type="checkbox" id="choix1"/><img src="{{ url_for('static', filename='gojo.jpg') }}" alt="gojo">Gojo<br/>
+<input type="checkbox" id="choix2"/><img src="{{ url_for('static', filename='ulqio.jpg') }}" alt="ulqio">Ulquiora<br/>
+<input type="checkbox" id="choix3"/><img src="{{ url_for('static', filename='isoka.png') }}" alt="isoka">Hisoka<br/></p>
 <button onclick="fct()">Afficher</button>
 <div id="zone1"></div>
 
