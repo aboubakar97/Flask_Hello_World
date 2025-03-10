@@ -90,6 +90,10 @@ def chenille():
 def carrecss():
     return render_template('carre.html')
 
+@app.route('/etoiles/')
+def carre_etoiles():
+    return render_template('Carre_Etoiles.html')
+
 
 
 
