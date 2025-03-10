@@ -4,23 +4,35 @@
 
 <style>img{padding-top:1%;}</style>
 <script>
-function fct(){
-var Result="";
-	for(i=1;i<4;i++){
-	if(document.getElementById('choix'+i).checked){
-Result = Result+'<img width="150px" src="/static/image'+i+'.jpg"/><br/>';
-		}
+
+	function img(){
+	if(document.getElementById('choix1').checked){
+		document.getElementById('image1').innerHTML = "<img src='../static/gojo.jpg' alt='Image 1' width='150'>";
+	} else {
+		document.getElementById('image1').innerHTML = "";
 	}
-document.getElementById('zone1').innerHTML = Result;	
-}
+
+	if(document.getElementById('choix2').checked){
+		document.getElementById('image2').innerHTML = "<img src='../static/ulqio.jpg' alt='Image 2' width='150'>";
+	} else {
+		document.getElementById('image2').innerHTML = "";
+	}
+
+	if(document.getElementById('choix3').checked){
+		document.getElementById('image3').innerHTML = "<img src='../static/hisoka.png' alt='Image 3' width='150'>";
+	} else {
+		document.getElementById('image3').innerHTML = "";
 
 </script>
 </head>
 <body>
 <h3>Image(s) à afficher ?</h3><p>
-<input type="checkbox" id="choix1"/><br/>
+<input type="checkbox" id="choix1"/> <br/>
+	<div id="image1"> </div>
 <input type="checkbox" id="choix2"/><br/>
-<input type="checkbox" id="choix3"/><br/></p>
+	<div id="image2"> </div>
+<input type="checkbox" id="choix3"/><br/>
+<div id="image3"> </div></p>
 <button onclick="fct()">Afficher</button>
 <div id="zone1"></div>
 
