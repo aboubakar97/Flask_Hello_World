@@ -7,14 +7,10 @@ function afficher(){
 	
 	var saisie = parseInt(document.getElementById('V1').value);
 	var resultat = "";	
-	var resultats ="";
+	
 		
-	for (j=0; j<saisie ; j++){
+	for (j=saisie; j>0 ; j--){
         for (i=0; i<saisie-j; i++){
-                resultats += "  "; 
-        }
-		resultats += "</br>";
-	for(i=0; i<j+1; i++){
 		
                 resultat += "*" 
 	}
@@ -23,7 +19,7 @@ function afficher(){
         }
 	
 	document.getElementById('result').innerHTML = resultat;
-	document.getElementById('results').innerHTML = resultats;
+
 
 }
 
@@ -35,6 +31,5 @@ function afficher(){
 <p>Saisir un chiffre : <input id="V1"/></p>
 <button onclick="afficher()">Afficher</button>
 <div id="result"></div>
-<div id="results"></div>
 </body>
 </html> 
