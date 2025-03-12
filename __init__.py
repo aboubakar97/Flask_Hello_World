@@ -75,12 +75,9 @@ def maison():
     return render_template('maison.html')
 
 @app.route('/jeu_des/')
-def jeu_des():
+def Jeu_Des():
     return render_template('Jeu_Des_Base.html')
 
-@app.route('/vallet/')
-def vallet():
-    return render_template('vallet_trefle.html')
 
 @app.route('/chenille/')
 def chenille():
