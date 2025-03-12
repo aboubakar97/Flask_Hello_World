@@ -74,9 +74,9 @@ def forme_base():
 def maison():
     return render_template('maison.html')
 
-@app.route('/Cmaison/')
-def Cmaison():
-    return render_template('Correction_Maison.html')
+@app.route('/jeu_des/')
+def jeu_des_base():
+    return render_template('Jeu_Des_Base.html')
 
 @app.route('/vallet/')
 def vallet():
