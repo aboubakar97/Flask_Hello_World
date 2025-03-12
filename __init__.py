@@ -39,9 +39,6 @@ def sommetot(val):
 def cnam():
     return render_template('mise_en_ligne.html')
                                                                                                                
-if __name__ == "__main__":
-  app.run(debug=True)
-
 @app.route('/exercice_base1/')
 def exercice_base1():
     return render_template('exercice_base1.html')
@@ -94,6 +91,10 @@ def carre_etoiles():
 @app.route('/images/')
 def images():
     return render_template('images.html')
+
+if __name__ == "__main__":
+  app.run(debug=True)
+
 
 
 
