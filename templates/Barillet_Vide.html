@@ -1,36 +1,39 @@
-</html>
+<!DOCTYPE html>
+<html>
 <head>
 <script>
 function fct2(id){
-	document.getElementById("Br"+id).style.fill="red";
+    document.getElementById("Br"+id).style.fill="red";
 }
 
 function lancer(){
-	var Val = Math.floor((Math.random() * 6)+1);
-	alert(Val);
-   
+    // Générer un nombre aléatoire entre 1 et 6
+    var Val = Math.floor((Math.random() * 6));
+    alert("Chambre sélectionnée : " + (Val + 1));
+
+    // Vérifier si la chambre aléatoire est rouge
+    if (document.getElementById("Br" + Val).style.fill == "red") {
+        alert("Perdu ! La chambre Numéro " + (Val + 1) + " était déjà sélectionnée.");
+    } else {
+        alert("Gagné ! La chambre Numéro " + (Val + 1) + " était sûre.");
+    }
 }
-     if(document.getElementById("Br"+Val).style.fill=="red"){alert("Perdu");}
-	else{alert("Gagné");}
-
-
 </script>
 </head>
 <body>
-	<h1>Roulette Russe</h1>
+    <h1>Roulette Russe</h1>
 
-	<svg width=200 height=200 style="background-color:antiquewhite">
-	<circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
-	<circle onclick="fct2(0)" id="Br0" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle onclick="fct2(1)" id="Br1" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle onclick="fct2(2)" id="Br2" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle onclick="fct2(3)" id="Br3" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle onclick="fct2(4)" id="Br4" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle onclick="fct2(5)" id="Br5" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
-	</svg>	
-	
-	<button onclick="lancer()">Jouer</button>	
-	
+    <svg width=200 height=200 style="background-color:antiquewhite">
+        <circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
+        <circle onclick="fct2(0)" id="Br0" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="fct2(1)" id="Br1" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="fct2(2)" id="Br2" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="fct2(3)" id="Br3" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="fct2(4)" id="Br4" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="fct2(5)" id="Br5" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
+    </svg>
+
+    <button onclick="lancer()">Jouer</button>
 </body>
 </html>
