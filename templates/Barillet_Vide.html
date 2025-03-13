@@ -8,14 +8,14 @@ function fct2(id){
 
 function lancer(){
     // Générer un nombre aléatoire entre 1 et 6
-    var Val = Math.floor((Math.random() * 6));
-    alert("Chambre sélectionnée : " + (Val + 1));
+    var Val = Math.floor((Math.random() * 6)+1);
+    alert("Chambre sélectionnée : " + (Val));
 
     // Vérifier si la chambre aléatoire est rouge
     if (document.getElementById("Br" + Val).style.fill == "red") {
-        alert("Perdu ! La chambre Numéro " + (Val + 1) + " était déjà sélectionnée.");
+        alert("Perdu ! La chambre Numéro " + (Val) + " était déjà sélectionnée.");
     } else {
-        alert("Gagné ! La chambre Numéro " + (Val + 1) + " était sûre.");
+        alert("Gagné ! La chambre Numéro " + (Val) + " était sûre.");
     }
 }
 </script>
