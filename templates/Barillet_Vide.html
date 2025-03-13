@@ -71,35 +71,44 @@
             const chambreAleatoire = Math.floor(Math.random() * 6);
             const chambre = document.getElementById("Br" + chambreAleatoire);
 
-            // Vérifier si la chambre est rouge ou grise
-            if (chambre.getAttribute("fill") === "red") {
-                alert("Perdu ! La chambre Numéro " + (chambreAleatoire + 1) + " contenait une balle.");
-                totalGains = 0; // Réinitialiser les gains en cas de perte
-            } else {
-                let gains = 0;
-                switch (ballesPlacees) {
-                    case 1:
-                        gains = 10000;
-                        break;
-                    case 2:
-                        gains = 100000;
-                        break;
-                    case 3:
-                        gains = 1000000;
-                        break;
+            // Sauvegarder la couleur actuelle de la chambre
+            const couleurInitiale = chambre.getAttribute("fill");
+
+            // Colorer la chambre sélectionnée en bleu
+            chambre.setAttribute("fill", "blue");
+
+            // Attendre 1 seconde avant de vérifier le résultat
+            setTimeout(() => {
+                // Vérifier si la chambre était rouge ou grise
+                if (couleurInitiale === "red") {
+                    alert("Perdu ! La chambre Numéro " + (chambreAleatoire + 1) + " contenait une balle.");
+                    totalGains = 0; // Réinitialiser les gains en cas de perte
+                } else {
+                    let gains = 0;
+                    switch (ballesPlacees) {
+                        case 1:
+                            gains = 10000;
+                            break;
+                        case 2:
+                            gains = 100000;
+                            break;
+                        case 3:
+                            gains = 1000000;
+                            break;
+                    }
+                    totalGains += gains;
+                    alert("Gagné ! La chambre Numéro " + (chambreAleatoire + 1) + " était sûre. Vous gagnez " + gains + " €.");
                 }
-                totalGains += gains;
-                alert("Gagné ! La chambre Numéro " + (chambreAleatoire + 1) + " était sûre. Vous gagnez " + gains + " €.");
-            }
 
-            // Mettre à jour l'affichage des gains
-            document.getElementById("totalGains").textContent = totalGains;
+                // Mettre à jour l'affichage des gains
+                document.getElementById("totalGains").textContent = totalGains;
 
-            // Réinitialiser le jeu
-            ballesPlacees = 0;
-            for (let i = 0; i < 6; i++) {
-                document.getElementById("Br" + i).setAttribute("fill", "gray");
-            }
+                // Réinitialiser le jeu
+                ballesPlacees = 0;
+                for (let i = 0; i < 6; i++) {
+                    document.getElementById("Br" + i).setAttribute("fill", "gray");
+                }
+            }, 1000); // Délai de 1 seconde
         }
     </script>
 </body>
