@@ -1,39 +1,53 @@
 <!DOCTYPE html>
-<html>
+</html>
+
 <head>
-<script>
-function fct2(id){
-    document.getElementById("Br"+id).style.fill="red";
-}
+	<script>
 
-function lancer(){
-    // Générer un nombre aléatoire entre 1 et 6
-    var Val = Math.floor((Math.random() * 6)+1);
-    alert("Chambre sélectionnée : " + (Val));
+		function numero_chambre(id) {
+			alert("Numero : " + id);
+		}
 
-    // Vérifier si la chambre aléatoire est rouge
-    if (document.getElementById("Br" + Val).style.fill == "red") {
-        alert("Perdu ! La chambre Numéro " + (Val) + " était déjà sélectionnée.");
-    } else {
-        alert("Gagné ! La chambre Numéro " + (Val) + " était sûre.");
-    }
-}
-</script>
+		function lancer() {
+			const val = Math.floor(Math.random() * 6) + 1;
+
+			if (document.getElementById("Br" + val).style.fill == "gray") {
+				alert("veuillez selectionner un numéro");
+				return;
+			}
+			if (document.getElementById("Br" + val).style.fill == "red") {
+				alert("Perdu !!!!");
+			}
+			else {
+				alert("Gagné !!!");
+			}
+		}
+
+		function coloration(id) {
+			document.getElementById("Br" + id).style.fill = "red";
+		}
+
+	</script>
+
+
 </head>
+
 <body>
-    <h1>Roulette Russe</h1>
+	<h1>Roulette Russe</h1>
 
-    <svg width=200 height=200 style="background-color:antiquewhite">
-        <circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
-        <circle onclick="fct2(0)" id="Br0" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle onclick="fct2(1)" id="Br1" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle onclick="fct2(2)" id="Br2" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle onclick="fct2(3)" id="Br3" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle onclick="fct2(4)" id="Br4" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle onclick="fct2(5)" id="Br5" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
-        <circle cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
-    </svg>
+	<svg width=200 height=200 style="background-color:antiquewhite">
+		<circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
+		<circle onclick="coloration(1)" id="Br1" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
+		<circle onclick="coloration(2)" id="Br2" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+		<circle onclick="coloration(3)" id="Br3" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+		<circle onclick="coloration(4)" id="Br4" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+		<circle onclick="coloration(5)" id="Br5" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+		<circle onclick="coloration(6)" id="Br6" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
+		<circle onclick="lancer()" cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
+	</svg>
 
-    <button onclick="lancer()">Jouer</button>
+	<button onclick="lancer()">Jouer</button>
+
 </body>
+
 </html>
