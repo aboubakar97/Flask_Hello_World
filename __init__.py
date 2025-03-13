@@ -33,64 +33,11 @@ def sommetot(val):
     sommet = list(map(int, val.split('/')))
     sommetotale = sum(sommet)
     return "La somme totale des valeurs est :" + str(sommetotale)
-
-
-@app.route('/cnam/')
-def cnam():
-    return render_template('mise_en_ligne.html')
-                                                                                                               
-@app.route('/exercice_base1/')
-def exercice_base1():
-    return render_template('exercice_base1.html')
   
-@app.route('/exercice_base2/')
-def exo():
-    return render_template('exo.html')
-  
-@app.route('/exercice_base3/')
-def exo2():
-    return render_template('exo2.html')
-  
-@app.route('/form/')
-def formulaire():
-    return render_template('formulaire.html')
-
-@app.route('/formulaire/')
-def form():
-    return render_template('form_pokemon.html')
-
-@app.route('/TP1/')
-def TP_():
-    return render_template('TP_.html')
-
-@app.route('/forme_base/')
-def forme_base():
-    return render_template('Exemple_Base_SVG.html')
-
-@app.route('/maison/')
-def maison():
-    return render_template('maison.html')
-
 @app.route('/jeu_des/')
 def Jeu_Des():
     return render_template('Jeu_Des_Base.html')
 
-
-@app.route('/chenille/')
-def chenille():
-    return render_template('chenille.html')
-
-@app.route('/carre/')
-def carrecss():
-    return render_template('carre.html')
-
-@app.route('/etoiles/')
-def carre_etoiles():
-    return render_template('Carre_Etoiles.html')
-
-@app.route('/images/')
-def images():
-    return render_template('images.html')
 @app.route('/roulette_russe/')
 def barillet():
     return render_template('Barillet_Vide.html')
