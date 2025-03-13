@@ -1,53 +1,106 @@
 <!DOCTYPE html>
-</html>
-
+<html>
 <head>
-	<script>
-
-		function numero_chambre(id) {
-			alert("Numero : " + id);
-		}
-
-		function lancer() {
-			const val = Math.floor(Math.random() * 6) + 1;
-
-			if (document.getElementById("Br" + val).style.fill == "gray") {
-				alert("veuillez selectionner un numéro");
-				return;
-			}
-			if (document.getElementById("Br" + val).style.fill == "red") {
-				alert("Perdu !!!!");
-			}
-			else {
-				alert("Gagné !!!");
-			}
-		}
-
-		function coloration(id) {
-			document.getElementById("Br" + id).style.fill = "red";
-		}
-
-	</script>
-
-
+    <title>Roulette Russe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        svg {
+            background-color: antiquewhite;
+            border-radius: 50%;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .gains {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-
 <body>
-	<h1>Roulette Russe</h1>
+    <h1>Roulette Russe</h1>
+    <p>Sélectionnez 1 à 3 chambres pour placer des balles (max 3).</p>
+    <svg width=200 height=200>
+        <circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
+        <circle onclick="placerBalle(0)" id="Br0" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="placerBalle(1)" id="Br1" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="placerBalle(2)" id="Br2" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="placerBalle(3)" id="Br3" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="placerBalle(4)" id="Br4" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle onclick="placerBalle(5)" id="Br5" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
+        <circle cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
+    </svg>
+    <button onclick="lancerJeu()">Jouer</button>
+    <div class="gains">Gains cumulés : <span id="totalGains">0</span> €</div>
 
-	<svg width=200 height=200 style="background-color:antiquewhite">
-		<circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
-		<circle onclick="coloration(1)" id="Br1" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
-		<circle onclick="coloration(2)" id="Br2" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
-		<circle onclick="coloration(3)" id="Br3" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
-		<circle onclick="coloration(4)" id="Br4" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
-		<circle onclick="coloration(5)" id="Br5" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
-		<circle onclick="coloration(6)" id="Br6" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
-		<circle onclick="lancer()" cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
-	</svg>
+    <script>
+        let ballesPlacees = 0; // Nombre de balles placées
+        let totalGains = 0; // Total des gains cumulés
 
-	<button onclick="lancer()">Jouer</button>
+        // Fonction pour placer une balle
+        function placerBalle(id) {
+            if (ballesPlacees < 3 && document.getElementById("Br" + id).getAttribute("fill") === "gray") {
+                document.getElementById("Br" + id).setAttribute("fill", "red");
+                ballesPlacees++;
+            } else if (document.getElementById("Br" + id).getAttribute("fill") === "red") {
+                document.getElementById("Br" + id).setAttribute("fill", "gray");
+                ballesPlacees--;
+            }
+        }
 
+        // Fonction pour lancer le jeu
+        function lancerJeu() {
+            if (ballesPlacees === 0) {
+                alert("Vous devez placer au moins une balle avant de jouer !");
+                return;
+            }
+
+            // Sélectionner une chambre aléatoire
+            const chambreAleatoire = Math.floor(Math.random() * 6);
+            const chambre = document.getElementById("Br" + chambreAleatoire);
+
+            // Vérifier si la chambre est rouge ou grise
+            if (chambre.getAttribute("fill") === "red") {
+                alert("Perdu ! La chambre Numéro " + (chambreAleatoire + 1) + " contenait une balle.");
+                totalGains = 0; // Réinitialiser les gains en cas de perte
+            } else {
+                let gains = 0;
+                switch (ballesPlacees) {
+                    case 1:
+                        gains = 10000;
+                        break;
+                    case 2:
+                        gains = 100000;
+                        break;
+                    case 3:
+                        gains = 1000000;
+                        break;
+                }
+                totalGains += gains;
+                alert("Gagné ! La chambre Numéro " + (chambreAleatoire + 1) + " était sûre. Vous gagnez " + gains + " €.");
+            }
+
+            // Mettre à jour l'affichage des gains
+            document.getElementById("totalGains").textContent = totalGains;
+
+            // Réinitialiser le jeu
+            ballesPlacees = 0;
+            for (let i = 0; i < 6; i++) {
+                document.getElementById("Br" + i).setAttribute("fill", "gray");
+            }
+        }
+    </script>
 </body>
-
 </html>
