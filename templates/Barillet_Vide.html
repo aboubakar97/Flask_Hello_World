@@ -2,6 +2,14 @@
 <head>
 <script>
 function fct2(id){
+	
+    // Réinitialiser toutes les chambres à la couleur grise
+    for (let i = 0; i < 6; i++) {
+        document.getElementById("Br" + i).setAttribute("fill", "gray");
+    }
+
+    // Colorier la chambre sélectionnée en rouge
+    document.getElementById("Br" + (id - 1)).setAttribute("fill", "red");
 	alert("Vous avez cliquez sur la chambre Numero : "+id);
 }
 
