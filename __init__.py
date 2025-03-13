@@ -93,7 +93,7 @@ def images():
     return render_template('images.html')
 @app.route('/roulette_russe/')
 def barillet():
-    return render_template('Barillet_vide.html')
+    return render_template('Barillet_Vide.html')
 
 if __name__ == "__main__":
   app.run(debug=True)
